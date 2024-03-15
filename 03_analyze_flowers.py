@@ -29,6 +29,7 @@
 """
 # -------------------------1.0 ENVIRONMENT SETUP----------------------------- #
 from matplotlib.pyplot import boxplot, close, savefig, title
+from pathlib import Path
 from pandas import read_csv
 from pandas.plotting import scatter_matrix
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
@@ -44,7 +45,7 @@ from sklearn.tree import DecisionTreeClassifier
 # -------------------------2.0 DATA LOADING---------------------------------- #
 # Load dataset with column names
 columns = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
-dataframe = read_csv(filepath_or_buffer='data\iris.csv', names=columns, header=None)
+dataframe = read_csv(filepath_or_buffer=Path('data/iris.csv'), names=columns, header=None)
 
 
 # -------------------------3.0 DATA SUMMARY---------------------------------- #
@@ -60,17 +61,17 @@ print('\n')
 # Visualize data to see trends
 # Box plot
 dataframe.plot(kind='box', subplots=True, layout=(2, 2), sharex=False, sharey=False)
-savefig('figures/figure-01-box-plot.png', dpi=300)
+savefig(Path('figures/figure-01-box-plot.png'), dpi=300)
 close()
 
 # Histogram
 dataframe.hist()
-savefig('figures/figure-02-histogram.png', dpi=300)
+savefig(Path('figures/figure-02-histogram.png'), dpi=300)
 close()
 
 # Scatter matrix
 scatter_matrix(dataframe)
-savefig('figures/figure-03-scatter-matrix.png', dpi=300)
+savefig(Path('figures/figure-03-scatter-matrix.png'), dpi=300)
 close()
 
 
@@ -109,7 +110,7 @@ print('\n')
 # Compare algorithms
 boxplot(results, labels=column_names)
 title('Algorithm Comparison')
-savefig('figures/figure-04-spot-check.png', dpi=300)
+savefig(Path('figures/figure-04-spot-check.png'), dpi=300)
 close()
 
 

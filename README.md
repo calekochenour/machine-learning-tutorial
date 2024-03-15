@@ -1,3 +1,6 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/calekochenour/machine-learning-tutorial/main)
+
 # Machine Learning Tutorial
 
 Provides a tutorial for working with machine learning algorithms in Python. Adapted from the following [tutorial](https://machinelearningmastery.com/machine-learning-in-python-step-by-step/).

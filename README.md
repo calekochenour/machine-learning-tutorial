@@ -192,35 +192,35 @@ To run the scripts in a more automated way, use the Makefile recipes. There is o
 Script 1 - check versions:
 
 ```commandline
-(machine-learning-tutorial) > Make versions
+(machine-learning-tutorial) > make versions
 ```
 
 Script 2 - check imports:
 
 ```commandline
-(machine-learning-tutorial) > Make imports
+(machine-learning-tutorial) > make imports
 ```
 
 Script 3 - analyze flowers:
 
 ```commandline
-(machine-learning-tutorial) > Make flowers
+(machine-learning-tutorial) > make flowers
 ```
 
 Run all three scripts in succession:
 
 ```commandline
-(machine-learning-tutorial) > Make all
+(machine-learning-tutorial) > make all
 ```
 
 or
 
 ```commandline
-(machine-learning-tutorial) > Make
+(machine-learning-tutorial) > make
 ```
 
 Delete figures creted by script 3 - analyze flowers:
 
 ```commandline
-(machine-learning-tutorial) > Make clean
+(machine-learning-tutorial) > make clean
 ```

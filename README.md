@@ -5,7 +5,7 @@
 
 Provides a tutorial for working with machine learning algorithms in Python. Adapted from the following [tutorial](https://machinelearningmastery.com/machine-learning-in-python-step-by-step/).
 
-## Project Structure
+## Project Structure 
 
 ```
 machine-learning
@@ -54,9 +54,9 @@ Contains input data used by the `03_analyze_flowers.py` script.
 
 Contains all figures created by the `03_analyze_flowers.py` script. Note this directory is empty by default. The project tree diagram shows what it looks like once the `03_analyze_flowers.py` script has completed.
 
-## Project Setup
+## Project Setup - Local
 
-Install Miniconda:
+Install Miniconda: 
 
 * Download the latest [Miniconda installer](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links) for your operating system
 * Follow the Miniconda installation instructions ([Windows](https://conda.io/projects/conda/en/latest/user-guide/install/windows.html), [Linux](https://conda.io/projects/conda/en/latest/user-guide/install/linux.html), [macOS](https://conda.io/projects/conda/en/latest/user-guide/install/macos.html))
@@ -83,6 +83,14 @@ Activate Conda environment:
 ```commandline
 (base) > conda activate machine-learning-tutorial
 ```
+
+## Project Setup - Binder
+
+Launching the repository with Binder will open a JupyterLab instance and set up the Conda enviroment automatically. The scripts can then be run direclty within this JupyterLab instance. Note that the Binder is non-persistent; once closed, any file changes will not be saved. 
+
+Click the icon below to launch the project with Binder (also listed at the top of the repository). It may take some time to set up and congfigure the environment.
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/calekochenour/machine-learning-tutorial/main)
 
 ## Run Scripts
 
@@ -117,7 +125,7 @@ Script 3 - analyze flowers:
 (machine-learning-tutorial) > python 03_analyze_flowers.py
 Shape: (150, 5)
 
-First 20 records:
+First 20 records: 
     sepal-length  sepal-width  petal-length  petal-width        class
 0            5.1          3.5           1.4          0.2  Iris-setosa
 1            4.9          3.0           1.4          0.2  Iris-setosa
@@ -140,7 +148,7 @@ First 20 records:
 18           5.7          3.8           1.7          0.3  Iris-setosa
 19           5.1          3.8           1.5          0.3  Iris-setosa
 
-Summary:
+Summary: 
        sepal-length  sepal-width  petal-length  petal-width
 count    150.000000   150.000000    150.000000   150.000000
 mean       5.843333     3.054000      3.758667     1.198667
@@ -225,8 +233,8 @@ Delete figures created by script 3 - analyze flowers (Windows):
 (machine-learning-tutorial) > make clean-windows
 ```
 
-Delete figures created by script 3 - analyze flowers (Binder/Linux):
+Delete figures created by script 3 - analyze flowers (Linux - for use with Binder):
 
 ```commandline
-(machine-learning-tutorial) > make clean-binder
+(machine-learning-tutorial) > make clean-linux
 ```

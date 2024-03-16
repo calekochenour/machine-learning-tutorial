@@ -9,8 +9,11 @@ versions:
 imports:
 	python 02_check_imports.py
 
-flowers: data\iris.csv
+flowers: data/iris.csv
 	python 03_analyze_flowers.py
 
-clean:
+clean-windows:
 	del /q "figures\*.png"
+
+clean-binder:
+	rm -r figures/*

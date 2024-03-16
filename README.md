@@ -219,8 +219,14 @@ or
 (machine-learning-tutorial) > make
 ```
 
-Delete figures creted by script 3 - analyze flowers:
+Delete figures created by script 3 - analyze flowers (Windows):
 
 ```commandline
-(machine-learning-tutorial) > make clean
+(machine-learning-tutorial) > make clean-windows
+```
+
+Delete figures created by script 3 - analyze flowers (Binder/Linux):
+
+```commandline
+(machine-learning-tutorial) > make clean-binder
 ```

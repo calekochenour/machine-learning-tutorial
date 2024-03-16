@@ -15,5 +15,5 @@ flowers: data/iris.csv
 clean-windows:
 	del /q "figures\*.png"
 
-clean-binder:
+clean-linux:
 	rm -r figures/*

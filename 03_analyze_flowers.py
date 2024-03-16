@@ -27,6 +27,7 @@
       positive samples.'
 -------------------------------------------------------------------------------
 """
+
 # -------------------------1.0 ENVIRONMENT SETUP----------------------------- #
 from matplotlib.pyplot import boxplot, close, savefig, title
 from pathlib import Path
@@ -34,8 +35,16 @@ from pandas import read_csv
 from pandas.plotting import scatter_matrix
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-from sklearn.model_selection import cross_val_score, train_test_split, StratifiedKFold
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    confusion_matrix,
+)
+from sklearn.model_selection import (
+    cross_val_score,
+    train_test_split,
+    StratifiedKFold,
+)
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
@@ -44,8 +53,16 @@ from sklearn.tree import DecisionTreeClassifier
 
 # -------------------------2.0 DATA LOADING---------------------------------- #
 # Load dataset with column names
-columns = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
-dataframe = read_csv(filepath_or_buffer=Path('data/iris.csv'), names=columns, header=None)
+columns = [
+    'sepal-length',
+    'sepal-width',
+    'petal-length',
+    'petal-width',
+    'class',
+]
+dataframe = read_csv(
+    filepath_or_buffer=Path('data/iris.csv'), names=columns, header=None
+)
 
 
 # -------------------------3.0 DATA SUMMARY---------------------------------- #
@@ -60,7 +77,9 @@ print('\n')
 # -------------------------4.0 DATA VISUALIZATION---------------------------- #
 # Visualize data to see trends
 # Box plot
-dataframe.plot(kind='box', subplots=True, layout=(2, 2), sharex=False, sharey=False)
+dataframe.plot(
+    kind='box', subplots=True, layout=(2, 2), sharex=False, sharey=False
+)
 savefig(Path('figures/figure-01-box-plot.png'), dpi=300)
 close()
 
@@ -88,12 +107,14 @@ x_train, x_validation, y_train, y_validation = train_test_split(
 )
 
 # Spot check algorithms
-models = [('LR', LogisticRegression(solver='liblinear', multi_class='ovr')),
-          ('LDA', LinearDiscriminantAnalysis()),
-          ('KNN', KNeighborsClassifier()),
-          ('CART', DecisionTreeClassifier()),
-          ('NB', GaussianNB()),
-          ('SVM', SVC(gamma='auto'))]
+models = [
+    ('LR', LogisticRegression(solver='liblinear', multi_class='ovr')),
+    ('LDA', LinearDiscriminantAnalysis()),
+    ('KNN', KNeighborsClassifier()),
+    ('CART', DecisionTreeClassifier()),
+    ('NB', GaussianNB()),
+    ('SVM', SVC(gamma='auto')),
+]
 
 # Evaluate each model
 results = []
@@ -101,10 +122,14 @@ column_names = []
 print('Algorithm evaluation:')
 for name, model in models:
     kfold = StratifiedKFold(n_splits=10, random_state=1, shuffle=True)
-    cv_results = cross_val_score(model, x_train, y_train, cv=kfold, scoring='accuracy')
+    cv_results = cross_val_score(
+        model, x_train, y_train, cv=kfold, scoring='accuracy'
+    )
     results.append(cv_results)
     column_names.append(name)
-    print(f'{name}: {round(cv_results.mean(), 3)} ({round(cv_results.std(), 3)})')
+    print(
+        f'{name}: {round(cv_results.mean(), 3)} ({round(cv_results.std(), 3)})'
+    )
 print('\n')
 
 # Compare algorithms
@@ -124,4 +149,6 @@ predictions = model.predict(x_validation)
 print('Algorithm prediction:')
 print(f'Accuracy score: {round(accuracy_score(y_validation, predictions), 3)}')
 print(f'Confusion matrix:\n{confusion_matrix(y_validation, predictions)}')
-print(f'classification report:\n{classification_report(y_validation, predictions)}')
+print(
+    f'classification report:\n{classification_report(y_validation, predictions)}'
+)

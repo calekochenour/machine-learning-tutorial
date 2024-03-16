@@ -5,7 +5,7 @@
 
 Provides a tutorial for working with machine learning algorithms in Python. Adapted from the following [tutorial](https://machinelearningmastery.com/machine-learning-in-python-step-by-step/).
 
-## Project Structure 
+## Project Structure
 
 ```
 machine-learning
@@ -56,7 +56,7 @@ Contains all figures created by the `03_analyze_flowers.py` script. Note this di
 
 ## Project Setup
 
-Install Miniconda: 
+Install Miniconda:
 
 * Download the latest [Miniconda installer](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links) for your operating system
 * Follow the Miniconda installation instructions ([Windows](https://conda.io/projects/conda/en/latest/user-guide/install/windows.html), [Linux](https://conda.io/projects/conda/en/latest/user-guide/install/linux.html), [macOS](https://conda.io/projects/conda/en/latest/user-guide/install/macos.html))
@@ -117,7 +117,7 @@ Script 3 - analyze flowers:
 (machine-learning-tutorial) > python 03_analyze_flowers.py
 Shape: (150, 5)
 
-First 20 records: 
+First 20 records:
     sepal-length  sepal-width  petal-length  petal-width        class
 0            5.1          3.5           1.4          0.2  Iris-setosa
 1            4.9          3.0           1.4          0.2  Iris-setosa
@@ -140,7 +140,7 @@ First 20 records:
 18           5.7          3.8           1.7          0.3  Iris-setosa
 19           5.1          3.8           1.5          0.3  Iris-setosa
 
-Summary: 
+Summary:
        sepal-length  sepal-width  petal-length  petal-width
 count    150.000000   150.000000    150.000000   150.000000
 mean       5.843333     3.054000      3.758667     1.198667
